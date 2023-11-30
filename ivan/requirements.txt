@@ -1,0 +1,5 @@
+# Local package
+-e ../
+
+# Install dependencies
+python-dotenv
