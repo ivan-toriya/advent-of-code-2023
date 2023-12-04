@@ -9,6 +9,7 @@ import utils.input
 load_dotenv()
 
 inp: str = utils.input.get(session_cookie=os.environ["SESSION_COOKIE"], year=2023, day=2)
+inp = inp.splitlines()
 
 # %% ==PART_1==
 
@@ -35,7 +36,7 @@ bag_contents = {
 #     },
 # }
 games = {}
-for line in inp.splitlines():
+for line in inp:
     game = line.split(": ")
     id = int(game[0].split("Game ")[1])
     games[id] = {}
@@ -76,7 +77,7 @@ from math import prod
 # }
 
 games = {}
-for line in inp.splitlines():
+for line in inp:
     game = line.split(": ")
     id = int(game[0].split("Game ")[1])
     games[id] = {}

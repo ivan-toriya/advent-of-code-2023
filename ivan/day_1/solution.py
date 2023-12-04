@@ -1,6 +1,6 @@
 # %%
 import os
-import string
+from string import ascii_letters
 
 from dotenv import load_dotenv
 
@@ -10,12 +10,12 @@ import utils.input
 load_dotenv()
 
 inp: str = utils.input.get(session_cookie=os.environ["SESSION_COOKIE"], year=2023, day=1)
-
+inp = inp.splitlines()
 # %% ==PART_1==
 
 numbers = []
-for l in inp.splitlines():
-    l = l.strip(string.ascii_letters)
+for l in inp:
+    l = l.strip(ascii_letters)
     numbers.append(int(l[0] + l[-1]))
 
 print(sum(numbers))
@@ -48,7 +48,7 @@ def find_all(subs: str, a_str: str):
 
 calibration_values = []
 
-for l in inp.splitlines():
+for l in inp:
     numbers = []
     for n in spelled_numbers:
         for i in find_all(n[0], l):

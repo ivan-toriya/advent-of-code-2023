@@ -12,7 +12,7 @@ import utils.input
 load_dotenv()
 
 inp: str = utils.input.get(session_cookie=os.environ["SESSION_COOKIE"], year=2023, day=3)
-
+inp = inp.splitlines()
 # %% ==PART_1==
 
 Number = namedtuple("Number", ["line_number", "idxs", "number"])
@@ -22,7 +22,7 @@ Symbol = namedtuple("Symbol", ["line_number", "index", "symbol"])
 symbols = []
 
 
-for line_n, line in enumerate(inp.splitlines(), 1):
+for line_n, line in enumerate(inp, 1):
     idxs = []
     number = ""
     for idx, char in enumerate(line, 1):
