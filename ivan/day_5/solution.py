@@ -66,3 +66,17 @@ closest_location = min([get_location_for_seed(seed, "seed") for seed in seeds])
 
 print("Part 1: ", closest_location)
 # %%
+
+#
+
+# seeds = [int(num) for num in inp.split("\n\n")[0].split(":")[1].split()]
+
+# seed_ranges = zip(seeds[::2], seeds[1::2])
+
+# locations = set()
+
+# for start, finish in seed_ranges:
+#     for seed in range(start, start + finish - 1):
+#         locations.add(get_location_for_seed(seed, "seed"))
+
+# print("Part 2: ", min(locations))
