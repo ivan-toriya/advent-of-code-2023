@@ -29,6 +29,8 @@ def calc_ways_to_beat(time: int, distance: int):
         speed = t
         if speed * (time - t) > distance:
             ways += 1
+        elif ways and speed * (time - t) <= distance:
+            break
     return ways
 
 
@@ -38,11 +40,12 @@ mul = prod([calc_ways_to_beat(t, d) for t, d in zip(times, distances)])
 print(mul)
 
 # %% ==Part 2==
+
 times = [num for num in inp[0].split(":")[1].split()]
-time = "".join(times)
+time = int("".join(times))
 
 distances = [num for num in inp[1].split(":")[1].split()]
-distance = "".join(distances)
+distance = int("".join(distances))
 
-ways = calc_ways_to_beat(int(time), int(distance))
+ways = calc_ways_to_beat(time, distance)
 print(ways)
