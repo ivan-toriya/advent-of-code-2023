@@ -1,4 +1,4 @@
-# msci-advent-of-code-2023
+# advent-of-code-2023
 
 ## How to get input programmatically
 
